@@ -7,23 +7,23 @@ services:
         ports:
           - 8181:80
         volumes: 
-          - ./public-html/ /usr/local/apache2/htdocs/ 
+          - ./adds/index.php/ /usr/local/apache2/htdocs/ 
     
-    # phpmyadmin: 
-    #   image: phpmyadmin
-    #   restart: always
-    #   environment: 
-    #     - PMA_ARBITRARY=1
-    #   ports: 
-    #     - 8282:80
+    phpmyadmin: 
+      image: phpmyadmin
+      restart: always
+      environment: 
+        - PMA_ARBITRARY=1
+      ports: 
+        - 8282:80
       
-    # bdd :
-    #   image: mysql:8.0
-    #   command: --default-authentication-plugin=mysql_native_password
-    #   restart: always
-    #   environment:
-    #     MYSQL_ROOT_PASSWORD: password
-    #   ports:
-    #     - 8383:3306
-    #   volumes:
-    #     - ./data:/var/lib/mysql
+    bdd :
+      image: mysql:8.0
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: password
+      ports:
+        - 8383:3306
+      volumes:
+        - ./data:/var/lib/mysql

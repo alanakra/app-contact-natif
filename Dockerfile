@@ -5,5 +5,5 @@ CMD [ "php", "./adds/index.php" ]
 
 
 FROM httpd:2.4
-COPY ./public-html/ /usr/local/apache2/htdocs/ 
+COPY ./adds/index.php/ /usr/local/apache2/htdocs/ 
 
